@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactCompiler: true,
+  output: 'export', // opsional, untuk static export
 };
 
 module.exports = nextConfig;
