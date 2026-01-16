@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 
-// Ikon Farcaster (opsional tapi keren)
 const FarcasterIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.524 16.357c-.286.571-.929.929-1.714.929H8.286c-.785 0-1.429-.357-1.714-.929L3.429 9.714c-.286-.571.071-1.214.643-1.5.571-.286 1.214.071 1.5.643l2.571 5.143 5.714-11.429c.286-.571.929-.929 1.5-.929.571 0 1.214.357 1.5.929l3.143 6.286c.286.571-.071 1.214-.643 1.5-.571.286-1.214-.071-1.5-.643L17.214 8.571l-2.571 5.143c-.286.571-.929.929-1.714.929-.785 0-1.429-.357-1.714-.929L9.5 10.286l-2.571 5.143c-.286.571-.929.929-1.714.929-.785 0-1.429-.357-1.714-.929L1.786 12.001l2.571-5.143c.286-.571.929-.929 1.5-.929.571 0 1.214.357 1.5.929l2.571 5.143 5.714-11.429c.286-.571.929-.929 1.5-.929.571 0 1.214.357 1.5.929l3.143 6.286c.286.571-.071 1.214-.643 1.5-.571.286-1.214-.071-1.5-.643L17.214 8.571l-2.571 5.143c-.286.571-.929.929-1.714.929z"/>
@@ -18,7 +17,6 @@ export default function FakeAirdropChecker() {
   const [isEligible, setIsEligible] = useState(false);
   const [finalResult, setFinalResult] = useState<string | null>(null);
 
-  // Ambil user dari Farcaster (atau dummy di localhost)
   useEffect(() => {
     const checkFarcasterUser = async () => {
       if (typeof window !== "undefined" && (window as any).farcaster) {
@@ -32,7 +30,6 @@ export default function FakeAirdropChecker() {
           console.warn("Not in Farcaster environment");
         }
       } else {
-        // Untuk testing di localhost
         setUser({ fid: 12345, username: "localuser" });
       }
     };
@@ -40,7 +37,6 @@ export default function FakeAirdropChecker() {
     checkFarcasterUser();
   }, []);
 
-  // Cek eligibility
   const checkEligibility = () => {
     setLoading(true);
     setResult(null);
@@ -62,7 +58,6 @@ export default function FakeAirdropChecker() {
     }, 2000);
   };
 
-  // Double or Nothing
   const handleDoubleOrNothing = () => {
     setLoading(true);
     setTimeout(() => {
@@ -78,24 +73,19 @@ export default function FakeAirdropChecker() {
     }, 1500);
   };
 
-  // Ambil hadiah sekarang
   const handleTakeIt = () => {
     setFinalResult(result);
   };
 
-  // Salin teks untuk Farcaster
   const shareToFarcaster = () => {
     const textToShare = finalResult || result || "I checked my $FAKE eligibility!";
-    const url = typeof window !== "undefined" 
-  ? window.location.origin 
-  : "https://fake-airdrop-checker.vercel.app";
+    const url = "https://fake-airdrop-checker.vercel.app";
     
     const farcasterText = `I just checked my eligibility for $FAKE:\n\n"${textToShare}"\n\nTry your luck → ${url}`;
 
     navigator.clipboard.writeText(farcasterText).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-      // Notifikasi kecil
       alert("✅ Copied! Paste this in Farcaster composer.");
     }).catch(err => {
       console.error("Failed to copy: ", err);
@@ -193,7 +183,7 @@ export default function FakeAirdropChecker() {
               style={{
                 padding: "0.5rem 1rem",
                 fontSize: "0.95rem",
-                backgroundColor: "#8b5cf6", // ungu Farcaster
+                backgroundColor: "#8b5cf6",
                 color: "#fff",
                 border: "none",
                 borderRadius: "8px",
