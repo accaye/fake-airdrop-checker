@@ -87,8 +87,8 @@ export default function FakeAirdropChecker() {
   const shareToFarcaster = () => {
     const textToShare = finalResult || result || "I checked my $FAKE eligibility!";
     const url = typeof window !== "undefined" 
-      ? window.location.origin 
-      : "https://fake-airdrop-checker.vercel.app";
+  ? window.location.origin 
+  : "https://fake-airdrop-checker.vercel.app";
     
     const farcasterText = `I just checked my eligibility for $FAKE:\n\n"${textToShare}"\n\nTry your luck → ${url}`;
 
