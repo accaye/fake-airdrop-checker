@@ -78,20 +78,17 @@ export default function FakeAirdropChecker() {
   };
 
   const shareToFarcaster = () => {
-    const textToShare = finalResult || result || "I checked my $FAKE eligibility!";
-    const url = "https://fake-airdrop-checker.vercel.app";
-    
-    const farcasterText = `I just checked my eligibility for $FAKE:\n\n"${textToShare}"\n\nTry your luck → ${url}`;
+  const textToShare = finalResult || result || "I checked my $FAKE eligibility!";
+  const url = "https://airdrop-checker-chi.vercel.app";
+  
+  const farcasterText = encodeURIComponent(
+    `I just checked my eligibility for $FAKE:\n\n"${textToShare}"\n\nTry your luck → ${url}`
+  );
 
-    navigator.clipboard.writeText(farcasterText).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-      alert("✅ Copied! Paste this in Farcaster composer.");
-    }).catch(err => {
-      console.error("Failed to copy: ", err);
-      alert("Failed to copy. Please try again.");
-    });
-  };
+  const farcasterUrl = `https://warpcast.com/~/compose?text=${farcasterText}`;
+  
+  window.open(farcasterUrl, "_blank");
+};
 
   return (
     <div
