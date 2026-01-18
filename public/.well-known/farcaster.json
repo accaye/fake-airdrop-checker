@@ -1,5 +1,5 @@
 {
-  "frame": {
+  "miniapp": {
     "name": "Am I Eligible?",
     "version": "1",
     "iconUrl": "https://airdrop-checker-chi.vercel.app/icon.png",
