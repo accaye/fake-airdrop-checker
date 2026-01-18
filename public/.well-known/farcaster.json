@@ -1,18 +1,20 @@
 {
-  "accountAssociation": {
-    "header": "eyJmaWQiOjIzNzA1NiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDI0OEQ5MjExMkEyMTQ4NEMwNmM3RjNkZDU1OTFhNDc3MDQxQjYwYTIifQ",
-    "payload": "eyJkb21haW4iOiJhaXJkcm9wLWNoZWNrZXItY2hpLnZlcmNlbC5hcHAifQ",
-    "signature": "emOfGi4og7XymNFxDrBQrbjtjiHHy94Bx+trDhmSJ9ANbmrjXVIHM7HSujBKYGVP0j/b+FuAED4opSOxy1G96hs="
-  },
   "frame": {
+    "name": "Am I Eligible?",
     "version": "1",
-    "name": "Example Frame",
     "iconUrl": "https://airdrop-checker-chi.vercel.app/icon.png",
     "homeUrl": "https://airdrop-checker-chi.vercel.app",
     "imageUrl": "https://airdrop-checker-chi.vercel.app/image.png",
-    "buttonTitle": "Check this out",
     "splashImageUrl": "https://airdrop-checker-chi.vercel.app/splash.png",
-    "splashBackgroundColor": "#eeccff",
-    "webhookUrl": "https://airdrop-checker-chi.vercel.app/api/webhook"
+    "splashBackgroundColor": "#0f0f0f",
+    "webhookUrl": "https://airdrop-checker-chi.vercel.app/api/webhook",
+    "description": "Check if you're eligible for $FAKE token! Just for fun. No real tokens.",
+    "subtitle": "Fake Airdrop Checker",
+    "primaryCategory": "games"
+  },
+  "accountAssociation": {
+    "header": "eyJmaWQiOjIzNzA1NiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDA0MjFDNzU5OTgzQkQ3QkZDMzc2MzliZTk0ODA1RjAyQUIzMDNDN0YifQ",
+    "payload": "eyJkb21haW4iOiJhaXJkcm9wLWNoZWNrZXItY2hpLnZlcmNlbC5hcHAifQ",
+    "signature": "NGGLkHXS9nl3JqvH4RReZ1YMHc3VroQg97u/+Qhoolszty6MSi5K2DWDMXyo15CENpHOl6l5tsuQT8srSx5L1Rw="
   }
 }
