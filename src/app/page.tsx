@@ -1,17 +1,5 @@
 // src/app/page.tsx
 "use client";
-import Head from 'next/head';
-
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <meta name="base:app_id" content="6968d7444991800a6d9d64b9" />
-      </Head>
-      {/* Your page content */}
-    </>
-  );
-}
 
 import { useState, useEffect } from "react";
 
@@ -21,7 +9,7 @@ const FarcasterIcon = () => (
   </svg>
 );
 
-export default function FakeAirdropChecker() {
+function FakeAirdropChecker() {
   const [user, setUser] = useState<{ fid: number; username: string } | null>(null);
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -57,7 +45,7 @@ export default function FakeAirdropChecker() {
     setTimeout(() => {
       const outcomes = [
         `🎉 Congrats, @${user?.username || "friend"}! You're eligible for 1337 $FAKE!`,
-        `💎 You’re a true OG! Claim your 9999 $FAKE soon!`,
+        `💎 You're a true OG! Claim your 9999 $FAKE soon!`,
         `❌ Sorry @${user?.username}, you missed the drop... maybe pray harder?`,
         `🤫 Psst... you're on the secret whitelist. Don't tell anyone!`,
         `⏳ Still processing... just kidding! You got nothing 😅`,
@@ -90,17 +78,17 @@ export default function FakeAirdropChecker() {
   };
 
   const shareToFarcaster = () => {
-  const textToShare = finalResult || result || "I checked my $FAKE eligibility!";
-  const url = "https://airdrop-checker-chi.vercel.app";
-  
-  const farcasterText = encodeURIComponent(
-    `I just checked my eligibility for $FAKE:\n\n"${textToShare}"\n\nTry your luck → ${url}`
-  );
+    const textToShare = finalResult || result || "I checked my $FAKE eligibility!";
+    const url = "https://airdrop-checker-chi.vercel.app";
+    
+    const farcasterText = encodeURIComponent(
+      `I just checked my eligibility for $FAKE:\n\n"${textToShare}"\n\nTry your luck → ${url}`
+    );
 
-  const farcasterUrl = `https://warpcast.com/~/compose?text=${farcasterText}`;
-  
-  window.open(farcasterUrl, "_blank");
-};
+    const farcasterUrl = `https://warpcast.com/~/compose?text=${farcasterText}`;
+    
+    window.open(farcasterUrl, "_blank");
+  };
 
   return (
     <div
@@ -300,3 +288,5 @@ export default function FakeAirdropChecker() {
     </div>
   );
 }
+
+export default FakeAirdropChecker;
