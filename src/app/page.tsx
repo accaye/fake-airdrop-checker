@@ -1,5 +1,17 @@
 // src/app/page.tsx
 "use client";
+import Head from 'next/head';
+
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <meta name="base:app_id" content="6968d7444991800a6d9d64b9" />
+      </Head>
+      {/* Your page content */}
+    </>
+  );
+}
 
 import { useState, useEffect } from "react";
 
